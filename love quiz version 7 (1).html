@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Love Confession</title>
+<style>
+body {
+  background-color: #FFC0CB; /* Light Pink */
+  font-family: 'Dancing Script', cursive; /* Use a more elegant cursive font */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  overflow: hidden; /* Hide scrollbars */
+}
+
+.container {
+  text-align: center;
+  background-color: #fff;
+  padding: 40px;
+  border-radius: 10px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  position: relative; /* For heart animation (optional) */
+}
+
+.question {
+  font-size: 2.5rem;
+  margin-bottom: 30px;
+}
+
+.options {
+  display: flex;
+  justify-content: center;
+}
+
+.option-button {
+  background-color: #FF69B4; /* Hot Pink */
+  border: none;
+  color: white;
+  padding: 15px 30px;
+  border-radius: 5px;
+  margin: 10px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.option-button:hover {
+  background-color: #FF1493; /* Deep Pink */
+}
+
+.response {
+  font-size: 2rem;
+  margin-top: 30px;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.response.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.footer {
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  color: #FF69B4; 
+  font-size: 0.8rem;
+}
+</style>
+</head>
+<body>
+  <div class="container">
+    <div class="question">
+      Do You Love Me?
+    </div>
+    <div class="options">
+      <button class="option-button" onclick="showResponse('yes')">Yes</button>
+      <button class="option-button" onclick="showResponse('no')">No</button>
+    </div>
+    <div id="response" class="response">
+      <span id="response-text"></span>
+    </div>
+  </div>
+  <div class="footer">
+    Made By AshuEditz
+  </div>
+
+  <script>
+    function showResponse(choice) {
+      const responseDiv = document.getElementById("response");
+      const responseText = document.getElementById("response-text");
+
+      if (choice === 'yes') {
+        responseText.textContent = "I Love You Too Mansi!"; 
+      } else {
+        responseText.textContent = "Maybe Someday You Will Be Mine!";
+      }
+
+      responseDiv.classList.add("show");
+    }
+  </script>
+</body>
+</html>
